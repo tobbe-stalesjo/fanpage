@@ -41,12 +41,12 @@ class Char extends Domer {
     render(html) {
         return html`
         <section>
-        <button click="addChar">Add New Charatar</button>
-        <p>Funkar det att komma till sidan Char</p>
-        </section>
+            <button click="addChar">Add New Charatar</button>
+            <p>Funkar det att komma till sidan Char</p>
+            </section>
 
-        <section class="chars">
-        ${this.getChars()}
+            <section class="chars">
+            ${this.getChars()}
         </section>
         `
     }

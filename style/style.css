@@ -28,17 +28,25 @@ body {
     padding-top: 20px;
 }
 
-.sidenav a {
+/* Style the sidenav links and the dropdown button */
+.sidenav a, .dropdown-btn {
     padding: 6px 8px 6px 16px;
     text-decoration: none;
-    font-size: 25px;
+    font-size: 20px;
     color: #818181;
     display: block;
+    border: none;
+    background: none;
+    width:100%;
+    text-align: left;
+    cursor: pointer;
+    outline: none;
 }
 
-.sidenav a:hover {
+/* On mouse-over */
+.sidenav a:hover, .dropdown-btn:hover {
     color: #f1f1f1;
-}
+  }
 
 .main {
     margin-left: 250px;
@@ -54,25 +62,28 @@ body {
         font-size: 18px;
     }
 
-    /* Add an active class to the active dropdown button */
+/* Add an active class to the active dropdown button */
 .active {
     background-color: green;
     color: white;
-  }
-  
-  /* Dropdown container (hidden by default). Optional: add a lighter background color and some left padding to change the design of the dropdown content */
-  .dropdown-container {
-    display: none;
-    background-color: #262626;
-    padding-left: 8px;
-  }
-  
-  /* Optional: Style the caret down icon */
-  .fa-caret-down {
+}
+
+
+
+/* Optional: Style the caret down icon */
+.fa-caret-down {
     float: right;
     padding-right: 8px;
-  }
-  
+}
+
+}
+
+/* Dropdown container (hidden by default). Optional: add a lighter background color and some left padding to change the design of the dropdown content */
+.dropdown-container {
+    
+    background-color: #262626;
+    padding-left: 8px;
+}
 
 .addCharLeft {
     display: inline-block;  
@@ -83,7 +94,6 @@ body {
     display: inline-block;  
     width: 49%;
     }  
-}
 
 .chars {
     height: 250px;

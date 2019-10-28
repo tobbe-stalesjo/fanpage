@@ -5,8 +5,22 @@ class App extends Domer {
     hunting = new Hunting();
     screenshot = new Screenhot();
     addChar = new AddChar(this);
+    showDropdown = false;
 
+    toggleDropdown() {
+       this.showDropdown = !this.showDropdown
+    }
 
+    get dropdown() {
+        return this.showDropdown ? `
+                    <div class="dropdown-container">
+                        <a href="/hunting">Knight</a>
+                        <a href="/hunting">Paladin</a>
+                        <a href="/hunting">Druid</a>
+                        <a href="/hunting">Sorcerer</a>
+                    </div>
+                        ` : ''
+    }
 
 
     render(html, route) {
@@ -21,7 +35,10 @@ class App extends Domer {
             <div class="sidenav">
                 <a href="/char">Charater</a>
                 <a href="/quest">Quest</a>
-                <a href="/hunting">Hunting Places</a>
+                <button click="toggleDropdown" class="dropdown-btn">Hunting Places
+                <i class="fa fa-caret-down"></i>
+                </button>
+                   ${this.dropdown}
                 <a href="/screenshot">Screenshot</a>
             </div>
 
