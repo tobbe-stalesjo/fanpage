@@ -4,7 +4,7 @@ class App extends Domer {
     quest = new Quest();
     hunting = new Hunting();
     screenshot = new Screenhot();
-    addChar = new AddChar();
+    addChar = new AddChar(this);
 
 
 

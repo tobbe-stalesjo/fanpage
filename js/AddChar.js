@@ -1,41 +1,45 @@
 class AddChar extends Domer {
 
-    _name = "";
-    _level = 0;
-    _voc = null;
-    _gender = null;
-    _world = "";
+  _name = "";
+  _level = 0;
+  _voc = null;
+  _gender = null;
+  _world = "";
 
-    char = new Char();
+  constructor(app) {
+    super()
+    this.app = app;
+  }
 
+  onStoreClick() {
 
-    onStoreClick() {
+    let gender = ''
 
-          let gender = ''
-
-          if(this._gender){
-            gender = 'Male'
-          } else {
-            gender = 'Female'
-          }
-
-          let newChar = new Char(this._name, this._level, this._voc, gender, this._world);
-          this.char.addCharatar(newChar);
-          console.log(this.char.chars)
-          
+    if (this._gender) {
+      gender = 'Male'
+    } else {
+      gender = 'Female'
     }
 
-    isDisabled(){
-        if (this._name == "" || this._level == 0 || this._voc == null || this._gender == null || this._world== ""){         // Kollar så att man fyller i alla fälten annars kan man inte klicka på knappen
-          return "disabled";
-        }
-        else{
-          return "";
-        }
-      }
+    let newChar = new Char(this._name, this._level, this._voc, gender, this._world);
+    this.app.char.addCharatar(newChar);
+    console.log(this.app.char.chars)
 
-    render(html) {
-        return html`
+    this.route.set('/char')
+
+  }
+
+  isDisabled() {
+    if (this._name == "" || this._level == 0 || this._voc == null || this._gender == null || this._world == "") {         // Kollar så att man fyller i alla fälten annars kan man inte klicka på knappen
+      return "disabled";
+    }
+    else {
+      return "";
+    }
+  }
+
+  render(html) {
+    return html`
         <section>
         <h1>Adding a new charatar</h1>
         <div class="addCharLeft">
@@ -63,17 +67,17 @@ class AddChar extends Domer {
         <br>
         <br> 
         <select name="Vocation" bind="_voc">                            
-        <option value="knight">Knight</option>
-        <option value="paladin">Paladin</option>
-        <option value="druid">Druid</option>
-        <option value="sorcerer">Sorcerer</option>
+        <option value="Knight">Knight</option>
+        <option value="Paladin">Paladin</option>
+        <option value="Druid">Druid</option>
+        <option value="Sorcerer">Sorcerer</option>
         </select>                                                        
         <br>
         <br> 
         <label for="_gender">Male:</label>
-        <input name="gender" type="checkbox" bind="_gender">
+        <input name="gender" type="radio" bind="_gender">
         <label for="_gender">Female:</label>
-        <input name="gender" type="checkbox" bind="_gender">
+        <input name="gender" type="radio" bind="_gender">
         <br>
         <br> 
         <input type="text" bind="_world" placeholder="World">
@@ -83,5 +87,5 @@ class AddChar extends Domer {
         </div>
         </section>
         `
-      }
-    }
+  }
+}

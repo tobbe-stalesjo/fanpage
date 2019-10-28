@@ -86,7 +86,7 @@ body {
 }
 
 .chars {
-    height: 220px;
+    height: 250px;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
@@ -98,7 +98,7 @@ body {
     align-items: center;
     font-size: 2em;
     height: 20%;
-    width: 33%;
+    width: 29%;
     border: 2px solid gray;
     cursor: pointer;
   }
