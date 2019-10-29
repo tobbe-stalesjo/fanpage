@@ -37,17 +37,24 @@ class Char extends Domer {
         return result;
     }
 
+    removeChar() {
+        //chars.pop()
+        this.chars.splice( 0, 1)
+    }
+
 
     render(html) {
         return html`
         <section>
-            <button click="addChar">Add New Charatar</button>
-            <p>Funkar det att komma till sidan Char</p>
-            </section>
-
-            <section class="chars">
-            ${this.getChars()}
-        </section>
+            <div class="chars">
+                ${this.getChars()}
+            </div>
+            <br>
+            <div>
+                <button click="addChar">Add New Charatar</button>
+                <button click="removeChar">Remove Char</button>
+            </div>
+    </section>
         `
     }
 }

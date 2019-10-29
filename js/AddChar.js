@@ -40,7 +40,7 @@ class AddChar extends Domer {
 
   render(html) {
     return html`
-        <section>
+        <section class="addChar">
           <h1>Adding a new charatar</h1>
           <div class="addCharLeft">
           <label for="_name">Name:</label>
