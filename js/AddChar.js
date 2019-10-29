@@ -13,13 +13,13 @@ class AddChar extends Domer {
 
   onStoreClick() {
 
-    let gender = ''
+     let gender = ''
 
-    if (this._gender) {
-      gender = 'Male'
-    } else {
-      gender = 'Female'
-    }
+     if (this._gender) {
+       gender = 'Male'
+     } else {
+       gender = 'Female'
+     }
 
     let newChar = new Char(this._name, this._level, this._voc, gender, this._world);
     this.app.char.addCharatar(newChar);
@@ -75,9 +75,9 @@ class AddChar extends Domer {
           <br>
           <br> 
           <label for="_gender">Male:</label>
-          <input name="gender" type="radio" bind="_gender">
+          <input name="_gender" type="radio" bind="_gender">
           <label for="_gender">Female:</label>
-          <input name="gender" type="radio" bind="_gender">
+          <input name="_gender" type="radio" bind="_gender">
           <br>
           <br> 
           <input type="text" bind="_world" placeholder="World">

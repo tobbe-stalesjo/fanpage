@@ -11,26 +11,17 @@ class Screenhot extends Domer {
         super()
     }
 
-    addScreenshot() {
-
-    }
-
 
     render(html) {
         return html`
         <section>
-        <p>Här kommer vi att lägga upp massa bilder och man ska även kunnat ladda upp bilder själv.</p>
         <br>
         <br>
         <div class="pictures">
-            <img src="${this._images}" alt="Screenshot" height="200" width="200">
+            <img src="${this._images[0]}" alt="Screenshot" height="250" width="33%">
+            <img src="${this._images[1]}" alt="Screenshot" height="250" width="33%">
+            <img src="${this._images[2]}" alt="Screenshot" height="250" width="33%">
         </div>
-        <br>
-        <br>
-        <label for="addScreenshot">Add a Screenshot:</label>
-        <br>
-        <br>
-        <input type="file" name="pitcure" accept="image/" bind="addScreenshot">
         </section>
         `
     }
