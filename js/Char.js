@@ -20,10 +20,10 @@ class Char extends Domer {
     }
 
     addChar() {
-        this.route.set('/addChar')
+        this.route.set('/addChar')          // När du klickar på knappen add char så skickar den dig vidare till en annan sida.
     }
 
-    getChars() {
+    getChars() {                                        // Lägger till allt du har skrivit in på sidan innan och skriver ut det snyggt
         let result = ``;
         for (let char of this.chars) {
             result += `
@@ -39,7 +39,7 @@ class Char extends Domer {
 
     removeChar() {
         //chars.pop()
-        this.chars.splice( 0, 1)
+        this.chars.splice( 0, 1)        // Tar bort den första charen i din lista
     }
 
 

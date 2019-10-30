@@ -13,7 +13,7 @@ class AddChar extends Domer {
 
   onStoreClick() {
 
-     let gender = ''
+     let gender = ''                                                                            // Tanken är att den ska veta vad man har klicka i på gender men jag får det inte att fungera än
 
      if (this._gender) {
        gender = 'Male'
@@ -21,11 +21,11 @@ class AddChar extends Domer {
        gender = 'Female'
      }
 
-    let newChar = new Char(this._name, this._level, this._voc, gender, this._world);
+    let newChar = new Char(this._name, this._level, this._voc, gender, this._world);            // Lägger till din nya char i en lista som sen visas på Chars
     this.app.char.addCharatar(newChar);
     console.log(this.app.char.chars)
 
-    this.route.set('/char')
+    this.route.set('/char')                                                                     // Skickar tillbaka dig till Char sidan igen.
 
   }
 

@@ -6,6 +6,7 @@ class App extends Domer {
     screenshot = new Screenhot();
     addChar = new AddChar(this);
     knight = new Knight();
+    paladin = new Paladin();
     showDropdown = false;
 
     toggleDropdown() {
@@ -16,7 +17,7 @@ class App extends Domer {
         return this.showDropdown ? `
                     <div class="dropdown-container">
                         <a href="/knight">Knight</a>
-                        <a href="/hunting">Paladin</a>
+                        <a href="/paladin">Paladin</a>
                         <a href="/hunting">Druid</a>
                         <a href="/hunting">Sorcerer</a>
                     </div>
@@ -51,6 +52,7 @@ class App extends Domer {
                 ${route("/hunting") ? this.hunting : ""}
                 ${route("/screenshot") ? this.screenshot : ""}
                 ${route("/knight") ? this.knight : ""}
+                ${route("/paladin") ? this.paladin : ""}
             </div>
         </section>
         `
