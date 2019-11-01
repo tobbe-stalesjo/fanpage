@@ -1,5 +1,6 @@
 class Screenhot extends Domer {
 
+    previewImgSrc = ''
 
     _images = [
         "/image/Dumpi_Boss (2).png",
@@ -18,32 +19,33 @@ class Screenhot extends Domer {
     }
 
 
-       // Kommer behöva en metod som gör att bilden kommer upp när jag klickar på den
-       // https://www.w3schools.com/howto/howto_css_modal_images.asp
+
+    imageClick(evt) {
+        let imgId = evt.target.getAttribute('data-img')
+        console.log(imgId);
+        this.previewImgSrc = this._images[imgId - 1]
+    }
 
     render(html) {
         return html`
         <section>
         <br>
         <br>
-            <div class="pictures">
-                <img id="myImg" src="${this._images[0]}" alt="Screenshot" height="250" width="33%">
-                <img id="myImg" src="${this._images[1]}" alt="Screenshot" height="250" width="33%">
-                <img id="myImg" src="${this._images[2]}" alt="Screenshot" height="250" width="33%">
-                <img id="myImg" src="${this._images[3]}" alt="Screenshot" height="250" width="33%">
-                <img id="myImg" src="${this._images[4]}" alt="Screenshot" height="250" width="33%">
-                <img id="myImg" src="${this._images[5]}" alt="Screenshot" height="250" width="33%">
-                <img id="myImg" src="${this._images[6]}" alt="Screenshot" height="250" width="33%">
-                <img id="myImg" src="${this._images[7]}" alt="Screenshot" height="250" width="33%">
-                <img id="myImg" src="${this._images[8]}" alt="Screenshot" height="250" width="33%">
+                ${this.previewImgSrc ? 
+                `<img id="previewImg" src="${this.previewImgSrc}" alt="bild1">` 
+                : ''}
+            <div class="pictures" click="imageClick">
+                <img id="myImg" data-img="1" src="${this._images[0]}" alt="Screenshot">
+                <img id="myImg" data-img="2" src="${this._images[1]}" alt="Screenshot">
+                <img id="myImg" data-img="3" src="${this._images[2]}" alt="Screenshot">
+                <img id="myImg" data-img="4" src="${this._images[3]}" alt="Screenshot">
+                <img id="myImg" data-img="5" src="${this._images[4]}" alt="Screenshot">
+                <img id="myImg" data-img="6" src="${this._images[5]}" alt="Screenshot">
+                <img id="myImg" data-img="7" src="${this._images[6]}" alt="Screenshot">
+                <img id="myImg" data-img="8" src="${this._images[7]}" alt="Screenshot">
+                <img id="myImg" data-img="9" src="${this._images[8]}" alt="Screenshot">
             </div>
-
-            <!-- Ska göra så att man kan klicka på bilden och att den öppnas och blir större -->
-            <div id="myModal" class="modal">
-                <span class="close">&times;</span>
-                <img class="modal-content" id="img01">
-                <div id="caption"></div>
-            </div>
+            
         </section>
         `
     }

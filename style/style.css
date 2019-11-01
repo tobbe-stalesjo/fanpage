@@ -144,6 +144,11 @@ body {
     border-radius: 5px;
     cursor: pointer;
     transition: 0.3s;
+    width: 33%;
+  }
+
+  #previewImg {
+    width: 100%;
   }
   
   #myImg:hover {opacity: 0.7;}
