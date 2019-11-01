@@ -84,20 +84,22 @@ body {
 .addCharLeft {
     display: inline-block;  
     width: 10%;
+    vertical-align: top;
     }  
 
 .addCharRight {
     display: inline-block;  
     width: 49%;
+    vertical-align: top;
     }  
 
 .chars {
     display: flex;
-	flex-direction: column;
-	flex-wrap: wrap;
-	justify-content: flex-start;
-	align-items: stretch;
-	align-content: stretch;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: stretch;
+    align-content: stretch;
     height: 250px;
   }
   
@@ -114,10 +116,10 @@ body {
 
   .main > .pictures {
     display: flex;
-	flex-direction: row;
-	flex-wrap: wrap;
-	justify-content: flex-start;
-	align-items: stretch;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: stretch;
     align-content: stretch;
   }
 
