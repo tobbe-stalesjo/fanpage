@@ -12,7 +12,7 @@ class AddChar extends Domer {
 
   onStoreClick() {
 
-    let gender = document.querySelector('input[name="_gender"]:checked').value                                                                    // Tanken är att den ska veta vad man har klicka i på gender men jag får det inte att fungera än
+    let gender = document.querySelector('input[name="_gender"]:checked').value                 // Fått hjälp av Johan med att få denna att fungera. Bug i Domer
 
     let newChar = new Char(this._name, this._level, this._voc, gender, this._world);            // Lägger till din nya char i en lista som sen visas på Chars
     this.app.char.addCharatar(newChar);
